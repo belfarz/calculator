@@ -1,0 +1,96 @@
+body {
+    background-color: #ecf0f3;
+    justify-content: center;
+    align-items: center;
+}
+
+.bodyCalc {
+    position: relative;
+    left: 40%;
+    width: 340px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: -5px -5px 12px #ffffff, 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+#cal {
+    height: 80px;
+    width: 332px;
+    margin: auto;
+    margin-left: 0;
+    background: #e8ecf2;
+    position: relative;
+    color: #73787d;
+    margin-top: 10px;
+    border: 0;
+    margin-left: 0px;
+    border-radius: 20px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.8), 5px 5px 10px rgba(0, 0, 0, 0.25);
+    padding-left: 20px;
+    font-size: 45px;
+}
+
+input {
+    background: #e8ecf2;
+    position: relative;
+    color: #73787d;
+    margin-top: 5px;
+    border: 0;
+    margin-left: 0px;
+    margin-right: 0;
+    height: 40px;
+    width: 80px;
+    font-size: 30px;
+    border-radius: 9999px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.8), 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+#btn {
+    background: rgb(60, 228, 60);
+    position: relative;
+    color: white;
+    margin-top: 5px;
+    border: 0;
+    margin-left: 0px;
+    margin-right: 0;
+    height: 40px;
+    width: 80px;
+    font-size: 30px;
+    border-radius: 9999px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.8), 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+#btn:hover {
+    color: black;
+}
+
+input:hover {
+    color: white;
+    box-shadow: -1px -1px 5px rgba(255, 255, 255, 0.6), 1px 1px 5px rgba(0, 0, 0, 0.3), inset -2px -2px 5px rgba(255, 255, 255, 1), inset 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#bottom {
+    width: 107px;
+}
+
+#mode {
+    background: #e8ecf2;
+    position: relative;
+    color: #73787d;
+    margin-top: 5px;
+    border: 0;
+    margin-left: 20px;
+    margin-right: 0;
+    font-size: 15px;
+    height: 20px;
+    width: 60px;
+    cursor: pointer;
+    border-radius: 9999px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.8), 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+#mode:hover {
+    color: white;
+    box-shadow: -1px -1px 5px rgba(255, 255, 255, 0.6), 1px 1px 5px rgba(0, 0, 0, 0.3), inset -2px -2px 5px rgba(255, 255, 255, 1), inset 2px 2px 4px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,233 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="calc.css">
+    <script src="sweetalert.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class="bodyCalc">
+        <h1 style="margin: 0;font-size:40px" align="center">CALCULATOR</h1>
+        <button id="mode" onclick="mode();">mode</button>
+        <form class="calculator" name="calculator" onclick="clck()">
+            <input id="cal" type="text" name="answer" readonly placeholder="0"> <br><br>
+
+            <input type="button" value="C" onclick="calculator.answer.value='' ">
+            <input type="button" value="⌫" onclick=" cancel();" style="font-size: 25px;">
+
+            <input type="button" value="/" onclick="calculator.answer.value += '/' ">
+            <input id="btn" type="button" value="on" onclick='onandoff();'>
+
+            <br><br>
+
+            <input type="button" value="7" onclick="(calculator.answer.value += '7' )">
+            <input type="button" value="8" onclick="(calculator.answer.value += '8' )">
+            <input type="button" value="9" onclick="(calculator.answer.value += '9' )">
+            <input type="button" value="x" onclick="(calculator.answer.value += '*' )">
+            <br><br>
+
+            <input type="button" value="4" onclick="(calculator.answer.value += '4' )">
+            <input type="button" value="5" onclick="(calculator.answer.value += '5' )">
+            <input type="button" value="6" onclick="(calculator.answer.value += '6') ">
+            <input type="button" value="-" onclick="(calculator.answer.value += '-' )">
+            <br><br>
+
+            <input type="button" value="1" onclick="calculator.answer.value += '1' ">
+            <input type="button" value="2" onclick="calculator.answer.value += '2' ">
+            <input type="button" value="3" onclick="calculator.answer.value += '3' ">
+            <input type="button" value="+" onclick="calculator.answer.value += '+' ">
+            <br><br>
+
+            <input type="button" value="%" onclick=" percent();">
+            <input type="button" value="0" onclick="calculator.answer.value += '0' ">
+            <input type="button" value="." onclick="calculator.answer.value += '.' ">
+            <input class="equal" type="button" value="=" onclick="calculator.answer.value = eval(calculator.answer.value)">
+            <br><br>
+
+            <div id="scientific">
+                <input type="button" value="√" onclick="sqrt();" class="btn">
+                <input type="button" value="x!" onclick="fact();" class="btn">
+                <input type="button" value="π" onclick="pi();" class="btn">
+                <input type="button" value="X^" onclick="calculator.answer.value = Math.pow(calculator.answer.value,2)" class="btn">
+                <br><br>
+
+                <input type="button" value="(" onclick="calculator.answer.value += '(' " class="btn">
+                <input type="button" value=")" onclick="calculator.answer.value += ')' " class="btn">
+                <input type="button" value="e" onclick="e(); " class="btn">
+                <input type="button" value="log" onclick="calculator.answer.value = Math.log(calculator.answer.value)" class="btn">
+                <br><br>
+
+                <input type="button" value="sin" onclick="sin();" id="bottom" class="btn">
+                <input type="button" value="cos" onclick="cos();" id="bottom" class="btn">
+                <input type="button" value="tan" onclick="tan();" id="bottom" class="btn">
+
+            </div>
+
+
+
+        </form>
+
+    </div>
+
+
+    <script>
+        var status = 'on';
+
+        function onandoff() {
+
+            if (status == 'on') {
+                status = 'off';
+                document.getElementById('btn').style = "background-color:red;"
+                document.getElementById('btn').value = 'off';
+                document.getElementById("cal").value = '';
+
+            } else {
+                status = 'on';
+                document.getElementById('btn').style = "background-color:rgb(60, 228, 60);"
+                document.getElementById('btn').value = 'on';
+                document.getElementById("cal").value = '';
+            }
+
+
+        }
+
+        function clck() {
+
+            if (status == 'on') {
+                document.getElementById('cal').value = "";
+
+                return;
+            }
+
+
+
+        }
+
+        var toggleSelector = document.getElementById('mode');
+        var science = document.getElementById('scientific');
+
+        function mode() {
+            if (science.style.display === 'none') {
+                science.style.display = 'block';
+            } else {
+                science.style.display = 'none';
+            }
+        }
+
+
+
+        function cancel() {
+            var del = document.getElementById("cal").value;
+            document.getElementById("cal").value = del.substring(0, del.length - 1);
+
+        }
+
+        var del = document.getElementById("cal").value;
+        var percnt = document.getElementById("cal").value = (del / 100);
+
+        function percent() {
+
+            var del = document.getElementById("cal").value;
+            document.getElementById("cal").value = (del / 100);
+        }
+
+        function sin() {
+            var num = document.getElementById("cal").value;
+            document.getElementById("cal").value = Math.sin(num);
+
+        }
+
+        function cos() {
+            var num = document.getElementById("cal").value;
+            document.getElementById("cal").value = Math.cos(num);
+        }
+
+        function tan() {
+            var num = document.getElementById("cal").value;
+            document.getElementById("cal").value = Math.tan(num);
+        }
+
+        function pow() {
+            var num = document.getElementById("cal").value;
+            document.getElementById("cal").value = Math.pow(screen.value, 2);
+
+        }
+
+        function sqrt() {
+            var num = document.getElementById("cal").value;
+            document.getElementById("cal").value = Math.sqrt(num);
+        }
+
+
+
+        function pi() {
+            var num = document.getElementById("cal").value;
+            document.getElementById("cal").value = num * 3.14159265359;
+        }
+
+        function e() {
+            var num = document.getElementById("cal").value;
+            document.getElementById("cal").value = num * 2.71828182846;
+        }
+
+        function fact() {
+            var i, num, f;
+            f = 1
+            num = document.getElementById("cal").value;
+            for (i = 1; i <= num; i++) {
+                f = f * i;
+            }
+
+            i = i - 1;
+
+            document.getElementById("cal").value = f;
+        }
+
+        function changemode() {
+            document.getElementsByClassName('btn').style = "display:none;"
+
+        }
+    </script>
+</body>
+
+
+
+
+
+<!--
+
+    let bracketSwitch = false;
+function myFun6_2(){
+    var input = document.getElementById("t1").value;
+
+    if(input.length >= 1){ //already something in the input box
+        var index = input.charAt(input.length-1);
+
+        if(!isNaN(parseInt(index)) && bracketSwitch){ //index is a number
+            document.getElementById("t1").value += ')';
+            bracketSwitch = !bracketSwitch;
+        } else if((!isNaN(parseInt(index)) && !bracketSwitch) || index === "."){
+            document.getElementById("t1").value += 'x(';
+            bracketSwitch = !bracketSwitch;
+        }else {
+            document.getElementById("t1").value += '(';
+            if(!bracketSwitch){ //if the switch was off
+                bracketSwitch = !bracketSwitch;
+            };
+        }
+    } else { //empty input box
+        document.getElementById("t1").value += '(';
+        bracketSwitch = !bracketSwitch;
+    }
+};
+-->
+
+
+
+</html>
